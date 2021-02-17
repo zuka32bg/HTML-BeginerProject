@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<footer>
+	<nav>
+	 <a href="index.html">Home</a>
+	 <a href="o-nama.html">O Nama</a>
+			 <a href="demo.html">Demo</a>
+		</nav>
+<head>
+<style>
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<center><h3>Kontakt</h3></center>
+
+		<ul>
+			<li><a target="_blank" href="https://twitter.com/zuak32GSXR">Twitter</a></li>
+			<li><a target="_blank" href="https://www.facebook.com/zuka997">Facebook</a></li>
+			<li><a target="_blank" href="https://www.instagram.com/zukancicuros/">Instagram</a></li>
+
+		</ul>
+
+<div class="container">
+  <form action="mailto:zuka32bg@gmail.com" method="post" enctype="text/plain">
+    <label for="fname">Ime</label>
+    <input type="text" id="fname" name="firstname" placeholder="Ime">
+
+    <label for="lname">Prezime</label>
+    <input type="text" id="lname" name="lastname" placeholder="Prezime">
+
+    <label for="lname">Email</label>
+    <input type="text" id="email" name="email" placeholder="example@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+
+
+    <label for="lname">Telefon</label>
+    <input type="text" id="phone" name="phone" placeholder="+(381)691684377">
+
+    <label for="city">Grad</label>
+    <select id="city" name="city">
+      <option value="city">Beograd</option>
+      <option value="city">Niš</option>
+      <option value="city">Loznica</option>
+       <option value="city">Smederevo</option>
+        <option value="city">Novi Sad</option>
+
+    </select>
+
+    <label for="subject">Napišite nešto o sebi</label>
+    <textarea maxlength="150"  id="subject" name="subject" placeholder="Napišite ovde.." style="height:100px"></textarea>
+
+		<input type="submit" value="Pošalji">
+
+
+
+  </form>
+</div>
+<center><h1>Kako doći do nas</h1></center>
+
+<style>
+				#map {
+				height: 400px;
+				width: 100%;
+				}
+		 </style>
+
+
+
+		 <div id="map"></div>
+		 <script>
+				function initMap() {
+					var uluru = { lat: 44.788553, lng: 20.499799 };
+					var map = new google.maps.Map(document.getElementById("map"), {
+						zoom: 13,
+						center: uluru
+					});
+					var marker = new google.maps.Marker({
+						position: uluru,
+						map: map
+					});
+				}
+
+
+				var fName = document.getElementById('fname');
+				var lName = document.getElementById('lname');
+				var phone = document.getElementById('phone');
+
+				fName.addEventListener('keydown', function(e) {
+					if(!(e.which >= 65 && e.which <= 120) && e.which != 8 || e.which === 32 ) {
+            e.preventDefault();
+        	}
+				});
+
+				lName.addEventListener('keydown', function(e) {
+					if(!(e.which >= 65 && e.which <= 120) && e.which != 8 || e.which === 32 ) {
+            e.preventDefault();
+        	}
+				});
+
+				phone.addEventListener('keydown', function(e) {
+					if((e.which >= 65 && e.which <= 120) && e.which != 8 && e.which != 107 || e.which === 32 ) {
+            e.preventDefault();
+        	}
+				});
+
+		 </script>
+		 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0RBHe6-r4UM-0s0xvX_jmxQxN_3MbF6A&callback=initMap"></script>
+
+
+</body>
+</html>
